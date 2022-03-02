@@ -1,95 +1,74 @@
 * {
   box-sizing: border-box;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
-html {
-  height: 100%;
-  width: 100%;
-}
 body {
   font-family: sans-serif;
   min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #312761;
 }
 
+#contenedor {
+  text-align: center;
+}
 
-.contenedor {
-  background-color:beige;
+.card-container {
+  margin: 50px;
+  background: #231e39;
   border-radius: 10px;
-  width: 500px;
-  height: auto;
-  margin: 100px auto;
 }
 
-@media (max-width: 600px) {
-   body {
-     background-color: blue;
-   }
-   .contenedor {
-     width: 500px;
-   }
+#card {
+  list-style: none;
+  margin: 10px;
+  background: #231e39;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px -10px rgba(0,0,0, 75);
+  color: aliceblue;
+  text-align: center;
+  width: auto;
+  padding: 10px;
 }
 
+#card:hover {
+  background: #3f3761;
+}
 
-#img {
-  margin-left: 30px;
-  margin-top: 15px;
-  background-color: aquamarine;
-  width: 60px;
-  height: 60px;
+#imagen {
   border-radius: 50%;
-  border-color: blue;
- }
-
-#names {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 0px 120px;
-  margin-top: -70px;
+  border: 1px solid #03bfcb;
+  padding: 7px;
 }
 
-#email {
-  font-size: 16px;
-  margin: 0px 140px;
-  margin-top: 10px;
+.name-container {
+  margin: 10px 0;
+  display: grid;
+  gap: 10px;
+  
 }
-
-#company {
-  font-size: 16px;
-  margin: 0px 140px;
-  margin-top: 10px;
-} 
-#skills {
-  font-size: 16px;
-  margin: 0px 140px;
-  margin-top: 10px;
-}
-#average {
-  font-size: 16px;
-  margin: 0px 140px;
-  margin-top: 10px;
-}
-
-
-#test {
-  font-size: 16px;
-  margin: 0px 140px;
-  margin-top: 10px;
-  padding-top: 10px;
-}
-
 
 
 #boton {
  position: absolute;
- margin-left: 460px;
+ margin-left: 280px;
+ margin-top: 25px;
  transition: 0.5s;
  border-radius: 50%;
  width: 0;
  border: none;
  border-style: none;
  background-color: none;
+}
+
+#boton1 {
+  position: absolute;
+  margin-left: 610px;
+  margin-top: 25px;
 }
 
 
@@ -100,7 +79,7 @@ body {
 #tex {
   width: 80px;
   border: none;
-  margin-left: 140px;
+  margin-left: 0px;
   
 }
 #adds {
@@ -110,14 +89,71 @@ body {
 
 ul{
   list-style: none;
-  width: 50px;
+  width: 5px;
   border: 0ch;
-  margin-left: 110px;
-  display: flex;
-  gap: 10px;
+  margin-left: 0px;
+  
 }
 
 #p {
-  background-color: black;
-  width: 400px;
+  background-color:white;
+}
+
+#principal {
+  min-height: 100px;
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#buscar {
+  max-width: 500px;
+  margin: auto;
+}
+
+@media (min-width: 300px) {
+ 
+  #principal {
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: 500px) {
+  
+  #principal {
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
+@media (min-width: 600px) {
+  
+  #principal {
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (min-width: 800px) {
+  
+  #principal {
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  
+  #principal {
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

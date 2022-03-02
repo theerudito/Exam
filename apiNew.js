@@ -1,10 +1,9 @@
-
 const boton = document.getElementById("boton")
 const hideText = document.getElementById("myDIV")
 
 //BUSQUEDA
 const buscar = document.getElementById("buscar")
-const rows = document.getElementsByTagName("td")
+const rows = document.getElementsByTagName("li")
 
 buscar.addEventListener("keyup", (e) => {
   let texto = e.target.value
@@ -24,6 +23,7 @@ const mostrar = () => {
 
 
 url = "https://api.hatchways.io/assessment/students"
+
 const getData = async () => {
   try {
     const res = await fetch (url)
@@ -35,22 +35,20 @@ const getData = async () => {
     data.students.forEach(item => {
     //console.log(item);
     principal+= ` 
-
-    
-                      <tr><td>
-
-                      <img id="img" src=${item.pic}>
-
-                      <h2 id="names">${item.firstName.toUpperCase()} ${item.lastName.toUpperCase()} </h2> 
-
-                      <h5 id="email">Email: ${item.email}</h5>
-
-                      <h5 id="company">Company: ${item.company}</h5>
-                
-                      <h5 id="skills">Skills: ${item.skill}</h5>
-              
-                      <h5 id="average">Average: ${item.grades.reduce((a,b) => a%b)}% </h5>
-
+                  <div>
+                  <li class"card-container" id="card">
+                    <div class="image-container">
+                      <img id="imagen" src="${item.pic}" alt="avatar">
+                    </div>
+                  
+                    <div class="name-container">
+                      <span class="firtsName">${item.firstName.toUpperCase()} ${item.lastName.toUpperCase()} </span>
+                        
+                    </div>
+                      <p class="email">Email:  ${item.email}</p>
+                      <p class="email">Company: ${item.company}</p>
+                      <p class="email">Skills: ${item.skill}</p>
+                      <p class="email">Averagues: ${item.grades.reduce((a,b) => a%b)}%</p>
                       <input id="tex" placeholder="Add Tag"><button id="adds" onclick="data()">+</button></input>
                       
                       <ul id="lis">
@@ -66,9 +64,7 @@ const getData = async () => {
                       <h5 id="test">test 6: ${item.grades[6]}%</h5>
                       <h5 id="test">test 7: ${item.grades[7]}%</h5>
                     </div>
-                    </td>
-                    </tr>
-                      ` 
+                  </li></div> ` 
     });
 
     document.getElementById("principal").innerHTML = principal
